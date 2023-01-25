@@ -3,7 +3,6 @@ import ast
 import re
 import sys
 from enum import Enum
-from pathlib import Path
 from typing import Any
 from typing import Generator
 from typing import Tuple
