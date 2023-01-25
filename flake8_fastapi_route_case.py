@@ -83,7 +83,7 @@ class Plugin:
         option_manager.add_option(
             "--route-case",
             type=SupportedCase,
-            default="snake",
+            default=SupportedCase.SNAKE,
             parse_from_config=True,
             metavar="route_case",
             help=(
