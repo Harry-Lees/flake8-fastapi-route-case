@@ -5,11 +5,10 @@ description = "Flake8 extension to check FastAPI routes all use the same case"
 authors = ["Harry Lees <harry.lees@gmail.com>"]
 license = "MIT"
 readme = "README.md"
-# packages = [{include = "flake8_fastapi_route_case"}]
 
 [tool.poetry.dependencies]
-python = "^3.11"
-importlib-metadata = "^6.0.0"
+python = ">= 3.8.1"
+importlib-metadata = ">= 6.0.0"
 
 [tool.poetry.group.dev.dependencies]
 flake8 = "^6.0.0"
