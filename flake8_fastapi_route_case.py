@@ -65,7 +65,7 @@ class Visitor(ast.NodeVisitor):
                         (
                             route.lineno,
                             route.col_offset,
-                            f"Value not {self.route_case.value} case",
+                            f"FRC001 Route path not {self.route_case.value} case",
                         )
                     )
 

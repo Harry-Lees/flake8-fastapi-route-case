@@ -63,7 +63,7 @@ def test_mixed_routes(check_case) -> None:
             check_case=check_case,
         )
         == {
-            f"1:12 Value not {check_case.value} case",
+            f"1:12 FRC001 Route path not {check_case.value} case",
         }
     )
 
@@ -79,7 +79,7 @@ def test_route_camel_case() -> None:
             )
         )
         == {
-            "1:12 Value not snake case",
+            "1:12 FRC001 Route path not snake case",
         }
     )
 
