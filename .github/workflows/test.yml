@@ -1,9 +1,13 @@
-name: unit-tests
+name: test
 
-on: workflow_call
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
 
 jobs:
-  tests:
+  unit-tests:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
