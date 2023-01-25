@@ -9,19 +9,18 @@ jobs:
       fail-fast: false
       matrix:
         python-version: ["3.8", "3.9", "3.10"]
-
-  steps:
-    - name: checkout
-      uses: actions/checkout@v2
-    - name: setup Python
-      uses: actions/setup-python@v3
-      with:
-        python-version: ${{ matrix.python-version }}
-    - name: install poetry
-      run: pipx install poetry
-    - name: install dependencies
-      run: |
-        poetry env use '${{ matrix.python-version }}'
-        poetry install
-    - name: run tests
-      run: python -m pytest -v
+    steps:
+      - uses: actions/checkout@v3
+      - name: setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: poetry
+      - name: install poetry
+        run: pipx install poetry
+      - name: install dependencies
+        run: |
+          poetry env use '${{ matrix.python-version }}'
+          poetry install
+      - name: run tests
+        run: python -m pytest -v
