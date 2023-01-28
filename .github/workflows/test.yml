@@ -24,6 +24,7 @@ jobs:
       - name: run black
         run: poetry run black . --check
   unit-tests:
+    needs: [black]
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
