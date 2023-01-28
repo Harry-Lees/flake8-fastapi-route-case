@@ -7,6 +7,22 @@ on:
     branches: [main]
 
 jobs:
+  black:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: install poetry
+        run: pipx install poetry
+      - name: setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+          cache: poetry
+      - name: install dependencies
+        run: |
+          poetry install
+      - name: run black
+        run: poetry run black . --check
   unit-tests:
     runs-on: ubuntu-latest
     strategy:
